@@ -21,6 +21,8 @@ import Signin from './Pages/Signin';
 import PageNotFound from './Pages/PageNotFound';
 import Signup from './Pages/Signup';
 import { UserContext } from './context/UserContext';
+import Footer from './layout/Footer';
+import Header from './layout/Header';
 
 
 
@@ -35,12 +37,14 @@ const[user, setUser] = useState(null);
       <ToastContainer />
       <UserContext.Provider value={{user, setUser}}>  
       {/* passing user and setUser so that i can keepon updating values */}
+      <Header />
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/signin' element={<Signin />} />
           <Route exact path='/signup' element={<Signup />} />
           <Route exact path='*' element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </UserContext.Provider>
     </Router>
   );
