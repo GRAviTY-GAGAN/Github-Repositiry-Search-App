@@ -12,6 +12,10 @@ import {Link} from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 const Header = () => {
+    const context = useContext(UserContext) //whatever the data that is there in usercontext will be stored in context that we can use.
+    const [isOpen, setIsOpen] = useState(false); //this is for toggling the navbar where default value of isOpen is false
+    const toggle = () => setIsOpen(!isOpen);
+
     return(
         <Navbar color="info" light expand='md'>
             <NavbarBrand>
@@ -19,24 +23,35 @@ const Header = () => {
                     LCO gitfire app
                 </Link>
             </NavbarBrand>
-            <NavbarToggler />
-            <Collapse navbar>
+            <NavbarText className="text-white" >{
+                //user is abig object here to further drill down into the object we will either store it in a variable and use it or will just use ? once we have the acces to the email next time we need to access the email we can just use '.'
+                context.user?.email ? context.user.email : ""
+            }</NavbarText>
+            <NavbarToggler onClick={toggle}/>
+            <Collapse isOpen={isOpen} navbar>
                 <Nav className="ms-auto" navbar>
-                    <NavItem>
-                        <NavLink className="text-white">
-                            Signin
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="text-white">
+                    {
+                        context.user ? (   //ternary operator
+                        <NavItem>
+                            <NavLink tag={Link} to="/" className="text-white">
+                                Logout
+                                </NavLink>
+                        </NavItem>
+                        ) : (
+                        <>
+                        <NavItem>
+                        <NavLink tag={Link} to="/" className="text-white">
                             Signup
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className="text-white">
-                            Logout
+                        <NavLink tag={Link} to="/" className="text-white">
+                            Signin
                         </NavLink>
                     </NavItem>
+                    </>
+                    )
+                    }
                 </Nav>
             </Collapse>
         </Navbar>
