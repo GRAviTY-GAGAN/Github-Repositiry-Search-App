@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,9 +22,10 @@ import Signup from './Pages/Signup';
 import { UserContext } from './context/UserContext';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
+import firebaseConfig from './Config/firebaseConfig';
 
-
-
+//init firebase
+firebase.initializeApp(firebaseConfig);
 
 const App = () => {
 
