@@ -9,7 +9,7 @@ const Footer = () => {
         tag='footer'
         className='text-center bg-info text-white text-uppercase fixed-bottom p-3' 
         >
-            LCO Github search App with Firebase
+            Github repository search app
         </Container>
     )
 }
