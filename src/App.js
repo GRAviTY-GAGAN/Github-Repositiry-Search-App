@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //react-router
-import {BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom';
 
 //toast
 import { ToastContainer } from 'react-toastify';
@@ -38,12 +38,12 @@ const[user, setUser] = useState(null);
       <UserContext.Provider value={{user, setUser}}>  
       {/* passing user and setUser so that i can keepon updating values */}
       <Header />
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/signin' element={<Signin />} />
-          <Route exact path='/signup' element={<Signup />} />
-          <Route exact path='*' element={<PageNotFound />} />
-        </Routes>
+        <Switch>
+          <Route exact path='/' component={Home } />
+          <Route exact path='/signin' component={Signin } />
+          <Route exact path='/signup' component={Signup } />
+          <Route exact path='*' component={PageNotFound } />
+        </Switch>
         <Footer />
       </UserContext.Provider>
     </Router>
