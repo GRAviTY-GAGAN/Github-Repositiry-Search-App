@@ -1,5 +1,5 @@
 #Github repository search app
-- A app using which we can search for repository of any user.
+- A app using which we can search for repository of any github user.
 
 
 ##Tech stack used
