@@ -18,7 +18,7 @@ const Repos = ({repos_url}) => {
 
 
     return(
-        <ListGroup>
+        <ListGroup className="mb-5">
             {repos.map(repo => (
                 <ListGroupItem key={repo.id} >
                     <div className="text-primary">{repo.name}</div>

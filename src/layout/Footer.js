@@ -7,7 +7,7 @@ const Footer = () => {
         <Container 
         fluid
         tag='footer'
-        className='text-center bg-info text-white text-uppercase fixed-bottom p-3' 
+        className='text-center bg-success text-white text-uppercase fixed-bottom p-3' 
         >
             Github repository search app
         </Container>

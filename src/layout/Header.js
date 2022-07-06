@@ -17,7 +17,7 @@ const Header = () => {
     const toggle = () => setIsOpen(!isOpen);
 
     return(
-        <Navbar color="info" light expand='md'>
+        <Navbar color="success" light expand='md'>
             <NavbarBrand>
                 <Link to='/' className="text-white">
                     Github Api
@@ -33,7 +33,7 @@ const Header = () => {
                     {
                         context.user ? (   //ternary operator
                         <NavItem>
-                            <NavLink onClick={() => {context.setUser(null)}} className="text-white">
+                            <NavLink tag={Link} onClick={() => {context.setUser(null)}} className="text-white">
                                 Logout
                                 </NavLink>
                         </NavItem>
