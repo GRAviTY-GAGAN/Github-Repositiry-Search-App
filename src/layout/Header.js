@@ -19,7 +19,7 @@ const Header = () => {
     return(
         <Navbar color="success" light expand='md'>
             <NavbarBrand>
-                <Link to='/' className="text-white">
+                <Link to='/' className="text-white ms-2">
                     Github Api
                 </Link>
             </NavbarBrand>
